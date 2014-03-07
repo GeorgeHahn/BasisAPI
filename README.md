@@ -326,6 +326,8 @@ V2 API wraps returned data with into a content block as shown below.
 }
 ```
 
+TODO
+
 ### users/me/days/2014-03-05/activities
 	Options
 		expand=activities&type=run,walk,bike
