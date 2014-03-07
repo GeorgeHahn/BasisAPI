@@ -549,6 +549,7 @@ User's time
 
 ### Other
 Date format: YYYY-MM-DD
+
 Average heart rate is returned as a decimal
 
 ### User ID
