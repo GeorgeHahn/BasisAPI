@@ -198,6 +198,8 @@ For activity patterns:
 
 ### feed/me?week=2014-03-03
 
+TODO
+
 ### user/me/habit_slots.json?date=2014-03-03
 
 ```
