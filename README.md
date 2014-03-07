@@ -501,6 +501,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/metrics
+```
 {
 	content: {
 		date: "",
@@ -512,6 +513,7 @@ TODO
 		response_code: 200
 	}
 }
+```
 
 ### users/me/days/2014-03-05/summary/habits
 ```
