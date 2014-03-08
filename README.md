@@ -14,7 +14,7 @@
 ## Endpoints
 ### user/me.json
 
-```
+```js
 {
 	profile: {
 		first_name: "", //
@@ -64,7 +64,7 @@
 
 ### points
 
-```
+```js
 {
 	points: 0
 }
@@ -74,7 +74,7 @@
 
 ### job-status
 
-```
+```js
 {
 	progress:ID:ID: { // two different ID strings
 		progress: {
@@ -90,7 +90,7 @@
 Freshly synced data processing status?
 
 ### chart/me
-```
+```js
 Options for activity details:
 	summary=true
 	interval=60
@@ -116,7 +116,7 @@ For activity patterns:
 	gsr=true
 	skin_temp=true
 ```
-```
+```js
 {
 	metrics: {
 		steps: {
@@ -202,7 +202,7 @@ TODO
 
 ### user/me/habit_slots.json?date=2014-03-03
 
-```
+```js
 [
 	{
 		index: 0,
@@ -211,7 +211,7 @@ TODO
 	},
 ]
 ```
-```
+```js
 habit: {
 	week: "", // YYYY-MM-DD
 	goal_units: "timedelta",
@@ -265,7 +265,7 @@ habit: {
 ```
 
 ### user/me/habit_slot/cost
-```
+```js
 {
 	cost: 0
 }
@@ -277,7 +277,7 @@ habit: {
 Base URL: https://app.mybasis.com/api/v2/
 
 V2 API wraps returned data with into a content block as shown below.
-```
+```js
 {
 	content: { ... }
 	meta: {
@@ -288,38 +288,38 @@ V2 API wraps returned data with into a content block as shown below.
 
 
 ### users/me
-```
+```js
 {
 	content: {
 		status: {
-			link: "/v2/users/me/status"
+			link: "/v2/users/me/status" // TODO
 		},
 		profile: {
-			link: "/v2/users/me/profile"
+			link: "/v2/users/me/profile" // 404
 		},
 		jobs: {
-			link: "/v2/users/me/jobs"
+			link: "/v2/users/me/jobs" // 404
 		},
 		days: {
-			link: "/v2/users/me/days"
+			link: "/v2/users/me/days" // TODO
 		},
 		anatomy: {
-			link: "/v2/users/me/anatomy"
+			link: "/v2/users/me/anatomy" // TODO
 		},
 		habits: {
-			link: "/v2/users/me/habits"
+			link: "/v2/users/me/habits" // 404
 		},
 		location: {
-			link: "/v2/users/me/location"
+			link: "/v2/users/me/location" // TODO
 		},
 		device: {
-			link: "/v2/users/me/device"
+			link: "/v2/users/me/device" // TODO
 		},
 		weeks: {
-			link: "/v2/users/me/weeks"
+			link: "/v2/users/me/weeks" // 404
 		},
 		data: {
-			link: "/v2/users/me/data"
+			link: "/v2/users/me/data" // 404
 		}
 	},
 	meta: {
@@ -327,8 +327,6 @@ V2 API wraps returned data with into a content block as shown below.
 	}
 }
 ```
-
-TODO
 
 ### users/me/days/2014-03-05/activities
 	Options
@@ -339,7 +337,7 @@ TODO
 TODO
 
 ### users/me/days/2014-03-05/summary
-```
+```js
 {
 	content: {
 		activities: {
@@ -366,7 +364,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/activities
-```
+```js
 {
 	content: {
 		run: {
@@ -393,7 +391,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/activities/run
-```
+```js
 {
 	content: {
 		date: "",
@@ -411,7 +409,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/activities/walk
-```
+```js
 {
 	content: {
 		date: "",
@@ -429,7 +427,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/activities/bike
-```
+```js
 {
 	content: {
 		date: "",
@@ -446,7 +444,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/activities/sleep
-```
+```js
 {
 	content: {
 		light_minutes: 0,
@@ -470,7 +468,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/activities/exercise
-```
+```js
 {
 	content: {
 		date: "",
@@ -488,7 +486,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/trends
-```
+```js
 {
 	content: {
 		sleep: {
@@ -505,7 +503,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/metrics
-```
+```js
 {
 	content: {
 		date: "",
@@ -520,7 +518,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/habits
-```
+```js
 {
 	content: {
 		date: "",
@@ -536,7 +534,7 @@ TODO
 ```
 
 ### users/me/days/2014-03-05/summary/game
-```
+```js
 {
 	content: {
 		date: "", // YYYY-MM-DD
@@ -557,6 +555,8 @@ User's time
 Date format: YYYY-MM-DD
 
 Average heart rate is returned as a decimal
+
+Auth tokens expire pretty quickly, be ready to reauth often
 
 ### User ID
 Anywhere /me/ appears in an API endpoint, a user ID can be used (the ID given from v1's /user/me.json)
